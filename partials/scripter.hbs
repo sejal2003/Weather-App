@@ -1,0 +1,82 @@
+
+
+
+<script>
+    const curDate=document.getElementById("date");
+let weathercon = document.getElementById("weathercon");
+
+const tempStatus = "{{tempStatus}}";
+let logoCurrentTime= new Date();
+let logoHours = logoCurrentTime.getHours();
+console.log(logoHours);
+console.log(tempStatus);
+if(tempStatus == "Sunny"&& (logoHours<20 || logoHours>5)){
+    weathercon.innerHTML = `<i class="bi bi-brightness-high-fill" style = 'color: rgb(232, 232, 134);'></i>` 
+}
+else if(tempStatus == "Clear" && (logoHours<20 || logoHours>5)){
+    weathercon.innerHTML = `<i class="bi bi-cloud-fill" style= 'color: #F6F1D5'></i>`
+}
+else if(tempStatus == "Clouds"){
+    weathercon.innerHTML = `<i class="bi bi-cloud-fill" style= 'color: #F6F1D5'></i>`
+}
+else if(tempStatus == "Rainy"){
+    weathercon.innerHTML = `<i class="bi bi-cloud-drizzle-fill" style = 'color: #F6F1D5'></i>`;
+}
+else if((tempStatus == "Sunny" || tempStatus == "Clear") && (logoHours>20 || logoHours<5)){
+    weathercon.innerHTML = `<i class="bi bi-moon-fill" style = 'color: #F6F1D5'></i>` 
+}
+
+const getCurrentDay = ()=>{
+    const Days = [
+        "SUN",
+        "MON",
+        "TUE",
+        "WED",
+        "THRUS",
+        "FRI",
+        "SAT"
+    ]
+    let currentDay = new Date()
+    let Day = Days[currentDay.getDay()]
+    return Day;
+}
+const getCurrentDate =()=>{
+
+    const months= [
+        "JAN",
+        "FEB",
+        "MARCH",
+        "APRIL",
+        "MAY",
+        "JUN",
+        "JULY",
+        "AUG",
+        "SEPT",
+        "OCT",
+        "NOV",
+        "DEC"
+    ]
+   let currentDate=new Date();
+   let Dat = `${months[currentDate.getMonth()]} ${currentDate.getDate()}`;
+    return Dat;
+ }
+const getCurrentTime= ()=>{
+    let currentTime= new Date();
+    let Hours = currentTime.getHours();
+    let Mins = currentTime.getMinutes();
+    let periods = "AM";
+    if(Hours > 11){
+        periods = "PM";
+        if(Hours > 12) Hours -= 12;
+    }
+    if(Mins < 10){
+        Mins = "0"+Mins;
+    }
+    return `${Hours}:${Mins} ${periods}`
+}
+
+
+curDate.innerHTML = `${getCurrentDay()} | ${getCurrentDate()} | ${getCurrentTime()}`
+
+
+</script>

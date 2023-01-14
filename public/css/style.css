@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Nunito Sans", sans-serif;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5),
+                       rgba(0, 0, 0, 0.5)), url('https://www.pixelstalk.net/wp-content/uploads/2016/07/Download-Free-Weather-Background.jpg');
+    background-repeat:    no-repeat;
+    background-position: center;
+    background-size:        cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+.main{
+    display:flex;
+    /* align-items: center; */
+    justify-content: center;
+    margin-top: 5rem;
+
+}
+.box{
+    width: 22vw;
+    height: 60vh;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 3rem rgba(0,0,0, 0.2);
+    background: white;
+    position: relative;
+    overflow: hidden;
+   
+}
+
+.bi-brightness-high-fill, .bi-cloud-fill, .bi-cloud-drizzle-fill, .bi-moon-fill{
+    margin-top:0.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+}
+
+.info{
+    text-align: center;
+}
+
+.content{
+    background-color: #29384e;
+    color: white;
+    width:100vw;
+    display: flex;
+    align-items: center;
+    height: 4rem;
+}
+.logo{
+    margin: 0 2rem;
+}
+.nav-link:hover{
+    font-size:x-large ;
+    font-weight: bold;
+}
+.navbar{
+    padding: 0;
+}
+.footer{
+    width: 100%;
+    height: 4rem;
+    background-color: #29384e;
+    margin-top: auto;
+    
+}
+.footer p{
+    color:white;
+    text-align: center;
+    line-height: 4rem;
+}
+.mainIndex{
+    display: flex;
+    margin-top: auto;
+}
+.indexHead{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50vw;
+    margin-left:3rem;
+}
+
+.rightIndex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+}
+
+.indexHead p{
+    font-size: 1.5rem;
+}
+.indexHead h1{
+    letter-spacing: 5px;
+}
+.searchHead{
+    text-align: center;
+    color: white;
+    background-color: #29384e;
+}
+.searchBox{
+    margin:1rem 0 1rem 0.5rem;
+    border: 2px solid black;
+}
+.bttn{
+    margin: 1rem 0.5rem;
+    padding: 0.75rem 0.75rem;
+    color: white;
+    background-color: #29384e;
+    border-radius: inherit;
+}
+.bttn:hover{
+    color:cyan;
+}
+.rightIndex .w-100{
+    height: 100%;
+    padding: 0 0.5rem;
+}
+@media screen and (max-width: 992px) {
+  .box{
+    width:75vw;
+  }
+  .mainIndex{
+    flex-direction: column;
+    align-items: center;
+  }
+  .rightIndex{
+    margin-bottom: 4rem;
+  }
+  .indexHead{
+    width: 75vw;
+    height: 90vh;
+  }
+}
